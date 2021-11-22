@@ -2,10 +2,11 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 
+
 import Link from 'next/link'
 
 import styles from '../styles/Home.module.css'
-import * as foo from './search/page-1'
+import * as Foo from './search/page-1'
 
 const Home: NextPage = () => {
   return (
@@ -39,6 +40,12 @@ const Home: NextPage = () => {
     <a>this page!</a>
   </Link>
 </h1>
+
+<h2>And here is a preview:</h2>
+{/* use foo tsx element */}
+<Foo.Foo />
+
+
           <a href="https://nextjs.org/learn" className={styles.card}>
             <h2>Learn &rarr;</h2>
             <p>Learn about Next.js in an interactive course with quizzes!</p>
