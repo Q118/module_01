@@ -6,14 +6,14 @@ import { widths, unit } from '../styles/styles';
 /** Layout styled components */
 const PageContainer = styled.div((): any => ({
     display: 'flex',
-    //justifyContent: props.grid ? 'center' : 'top',
-    //flexDirection: props.grid ? 'row' : 'column',
+    justifyContent: 'center',
+    flexDirection: 'row',
     flexWrap: 'wrap',
     alignSelf: 'center',
     flexGrow: 1,
-    //maxWidth: props.fullWidth ? null : `${widths.regularPageWidth}px`,
+    maxWidth: `${widths.regularPageWidth}px`,
     width: '100%',
-    //padding: props.fullWidth ? 0 : unit * 2,
+    padding: 0,
     paddingBottom: unit * 5,
 }));
 
@@ -21,19 +21,19 @@ const PageContainer = styled.div((): any => ({
  * Layout renders the full page content:
  * with header, Page container and footer
  */
-const Layout = ({ fullWidth, children, grid }: any) => {
-    return (
-        <>
-            <Header />
-            <PageContainer fullWidth={fullWidth} grid={grid}>
-                {fullWidth}
-                {children}
-                {grid}
-            </PageContainer>
-            <Footer />
-        </>
-    );
-};
+
+
+
+const Layout = ({children}: any) => (
+    <div>
+        <Header />
+        <PageContainer>
+            {children}
+        </PageContainer>
+        <Footer />
+    </div>
+);
+
 
 export default Layout;
 

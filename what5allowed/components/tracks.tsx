@@ -26,25 +26,45 @@ export const TRACKS = gql`
 // const Tracks = () => {
 //     const { loading, error, data } = useQuery(TRACKS);
 //     return (
-//         <Layout grid>
+//         // <Layout grid>
+//         <div style={{display: 'flex',
+//         justifyContent: 'center',
+//         flexDirection: 'row',
+//         flexWrap: 'wrap',
+//         alignSelf: 'center',
+//         flexGrow: 1,
+//         maxWidth: `1000px`,
+//         width: '100%',
+//         padding: 0,
+//         paddingBottom: 5 }}>
 //             <QueryResult error={error} loading={loading} data={data}>
 //                 {data?.tracksForHome?.map((track, index) => (
 //                     <TrackCard key={track.id} track={track} />
 //                 ))}
 //             </QueryResult>
-//         </Layout>
+//         </div>
+//         //    </Layout>
 //     );
 // };
 
+//this rendersthe data in pure json
 const Tracks = () => {
+    console.log("!" + typeof Layout)
+    console.log("!!" + typeof QueryResult)
     const { loading, error, data } = useQuery(TRACKS);
     if (loading) return 'Loading...';
     if (error) return `Error! ${error.message}`;
     return (
         <div>
-            {JSON.stringify(data)};
+            {/* <QueryResult error={error} loading={loading} data={data}>
+                {data?.tracksForHome?.map((track, index) => (
+                    <TrackCard key={track.id} track={track} />
+                ))}
+            </QueryResult> */}
+                {(JSON.stringify(data))};
+
         </div>
-    )
+    );
 };
 
 
